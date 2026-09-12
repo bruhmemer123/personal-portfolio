@@ -122,8 +122,8 @@ export const TerminalWidget = ({ onNavigateSection }) => {
               Status: <span className="text-term-green">{personalInfo.status}</span>
             </div>
             <div className="pt-1">
-              <a 
-                href="#about" 
+              <a
+                href="#about"
                 onClick={(e) => { e.preventDefault(); onNavigateSection?.('about'); }}
                 className="text-term-green hover:underline inline-flex items-center gap-1 text-[11px]"
               >
@@ -152,12 +152,12 @@ export const TerminalWidget = ({ onNavigateSection }) => {
                 </div>
               ))}
             </div>
-            <a 
-              href="#skills" 
+            <a
+              href="#skills"
               onClick={(e) => { e.preventDefault(); onNavigateSection?.('skills'); }}
               className="text-term-green hover:underline inline-flex items-center gap-1 text-[11px] pt-1"
             >
-              <span>View visual skill proficiency bars</span> →
+              <span>Inspect mounted package directories and active toolsets below.</span> →
             </a>
           </div>
         );
@@ -177,7 +177,7 @@ export const TerminalWidget = ({ onNavigateSection }) => {
                     </span>
                   </div>
                   <p className="text-[11px] text-slate-400 mt-0.5">{proj.tagline}</p>
-                  
+
                   {/* Clickable inline links as requested! */}
                   <div className="flex flex-wrap items-center gap-3 mt-2 text-[11px]">
                     <a
@@ -201,8 +201,8 @@ export const TerminalWidget = ({ onNavigateSection }) => {
                 </div>
               ))}
             </div>
-            <a 
-              href="#projects" 
+            <a
+              href="#projects"
               onClick={(e) => { e.preventDefault(); onNavigateSection?.('projects'); }}
               className="text-term-green hover:underline inline-flex items-center gap-1 text-[11px]"
             >
@@ -227,8 +227,8 @@ export const TerminalWidget = ({ onNavigateSection }) => {
                 </div>
               ))}
             </div>
-            <a 
-              href="#experience" 
+            <a
+              href="#experience"
               onClick={(e) => { e.preventDefault(); onNavigateSection?.('experience'); }}
               className="text-term-green hover:underline inline-flex items-center gap-1 text-[11px] pt-1"
             >
@@ -275,8 +275,8 @@ export const TerminalWidget = ({ onNavigateSection }) => {
                 </a>
               </div>
             </div>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               onClick={(e) => { e.preventDefault(); onNavigateSection?.('contact'); }}
               className="text-term-green hover:underline inline-flex items-center gap-1 text-[11px] pt-1"
             >
@@ -400,7 +400,7 @@ export const TerminalWidget = ({ onNavigateSection }) => {
 
   return (
     <div className="w-full rounded-xl bg-term-card/95 border border-term-border shadow-2xl shadow-black/80 overflow-hidden flex flex-col font-mono text-xs sm:text-sm">
-      
+
       {/* Terminal Title Bar */}
       <div className="px-4 py-2.5 bg-slate-900/90 border-b border-term-border flex items-center justify-between select-none">
         <div className="flex items-center gap-2">
@@ -421,9 +421,9 @@ export const TerminalWidget = ({ onNavigateSection }) => {
       </div>
 
       {/* Terminal Output Log Canvas */}
-      <div 
+      <div
         ref={terminalContainerRef}
-        onClick={() => inputRef.current?.focus()} 
+        onClick={() => inputRef.current?.focus()}
         className="p-4 sm:p-5 h-[320px] sm:h-[360px] overflow-y-auto space-y-4 cursor-text bg-gradient-to-b from-[#0a0d14]/90 to-[#0e121c]/95"
       >
         {/* Welcome greeting */}
@@ -477,7 +477,7 @@ export const TerminalWidget = ({ onNavigateSection }) => {
         <div className="flex items-center gap-1.5 text-term-green font-bold shrink-0 text-xs">
           <span>visitor@portfolio:~$</span>
         </div>
-        
+
         <input
           ref={inputRef}
           type="text"
