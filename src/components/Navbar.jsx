@@ -23,18 +23,17 @@ export const Navbar = ({ onSearchClick }) => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-term-bg/85 backdrop-blur-md border-b border-term-border shadow-lg shadow-black/40 py-3' 
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'bg-term-bg/85 backdrop-blur-md border-b border-term-border shadow-lg shadow-black/40 py-3'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
+
         {/* Brand Terminal Path */}
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           className="flex items-center gap-2 group focus:outline-none"
         >
           <div className="w-8 h-8 rounded bg-term-card border border-term-border flex items-center justify-center text-term-green group-hover:border-term-green/60 transition-colors">
@@ -64,7 +63,7 @@ export const Navbar = ({ onSearchClick }) => {
           ))}
         </nav>
 
-        {/* Right Action Tools */}
+        {/* Desktop Right Action Tools */}
         <div className="hidden md:flex items-center gap-3">
           {/* Quick Search trigger */}
           <button
@@ -80,7 +79,7 @@ export const Navbar = ({ onSearchClick }) => {
             </kbd>
           </button>
 
-          {/* Resume / CV Link */}
+          {/* Resume Link */}
           <a
             href={personalInfo.resumeUrl}
             target="_blank"
@@ -92,8 +91,21 @@ export const Navbar = ({ onSearchClick }) => {
           </a>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile Header Bar Controls */}
+        <div className="flex items-center gap-1.5 md:hidden">
+          {/* Direct Mobile Resume Quick Button */}
+          <a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Resume"
+            className="p-2 rounded bg-emerald-500/10 border border-term-green/40 text-term-green hover:bg-term-green hover:text-black transition-colors"
+            title="resume.pdf"
+          >
+            <FileText className="w-4 h-4" />
+          </a>
+
+          {/* Mobile Search Icon */}
           <button
             onClick={onSearchClick}
             aria-label="Search"
@@ -102,6 +114,7 @@ export const Navbar = ({ onSearchClick }) => {
             <Search className="w-4 h-4" />
           </button>
 
+          {/* Mobile Menu Hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
@@ -133,11 +146,12 @@ export const Navbar = ({ onSearchClick }) => {
               </a>
             ))}
 
+            {/* Full-width drawer button */}
             <a
               href={personalInfo.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-2 mt-2 rounded bg-term-green/10 border border-term-green/40 text-term-green hover:bg-term-green hover:text-black font-semibold transition-all"
+              className="flex items-center justify-center gap-2 p-2.5 mt-2 rounded bg-term-green/10 border border-term-green/40 text-term-green hover:bg-term-green hover:text-black font-semibold transition-all"
             >
               <FileText className="w-4 h-4" />
               <span>Download Resume</span>
@@ -149,4 +163,5 @@ export const Navbar = ({ onSearchClick }) => {
     </header>
   );
 };
+
 export default Navbar;
